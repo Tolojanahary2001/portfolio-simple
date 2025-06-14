@@ -79,10 +79,40 @@ p {
 }
 
 .myBtn-secondary:hover {
-    background: transparent;
+    background-color: var(--blue);
     color: var(--white);
-    border: 2px solid var(--white);
-    transition: all 0.3s;
+}
+
+.icon-wrapper {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+}
+
+.icon-wrapper img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 0.3s ease;
+}
+
+.icon-default {
+    opacity: 1;
+    z-index: 1;
+}
+
+.icon-hover {
+    opacity: 0;
+    z-index: 2;
+}
+
+.myBtn-secondary:hover .icon-default {
+    opacity: 0;
+}
+
+.myBtn-secondary:hover .icon-hover {
+    opacity: 1;
 }
 
 h1,
