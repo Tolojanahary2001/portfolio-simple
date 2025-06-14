@@ -43,6 +43,11 @@ p {
     font-size: 20px;
 }
 
+p.hello {
+    font-size: 25px;
+    margin-bottom: 5px;
+}
+
 :root {
     --white: #fff !important;
     --blue: #0070FF !important;
@@ -121,6 +126,11 @@ h1,
     font-weight: 700 !important;
     color: var(--black);
     font-family: montserrat;
+}
+
+span#typedText,
+span.cursor {
+    font-size: 50px !important;
 }
 
 .title {
@@ -354,7 +364,7 @@ h1,
     .h1,
     span.cursor,
     span#typedText {
-        font-size: 30px;
+        font-size: 40px !important;
     }
 
     .myBtnContainer {
