@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: #efedf7;
+    background-color: var(--white);
 }
 
 
@@ -68,7 +68,7 @@ p.hello {
 }
 
 .myBtn-secondary {
-    background-color: var(--white);
+    background-color: transparent;
     color: var(--black);
 }
 
@@ -209,6 +209,9 @@ span.cursor {
     height: 100%;
     display: flex;
     align-items: center;
+    background-image: url("../img/bg-hero.svg");
+    background-position: bottom;
+    background-size: cover;
 }
 
 .mySkills {
@@ -229,14 +232,32 @@ span.cursor {
     gap: 10px;
 }
 
+.bg-absolute {
+    position: absolute;
+    right: 0;
+    top: 25%;
+}
+
 .mypicContainer {
-    background-color: var(--blue);
+    background-image: linear-gradient(to right,
+            rgba(0, 112, 225, 1) 0%,
+            /* Top : couleur pleine */
+            rgba(0, 112, 255, 0.5) 50%,
+            /* Milieu : couleur + transparence */
+            rgba(0, 112, 255, 0.0) 100%
+            /* Bas : image visible */
+        ),
+        url("../bg-white.jpeg");
+    /* background-color: var(--blue); */
     border-top-left-radius: 150px;
     border-bottom-left-radius: 150px;
     position: absolute;
-    right: 0;
     padding: 20px;
     justify-content: left;
+    transform: rotate(-30deg);
+    width: 100%;
+    border: none;
+    outline: none;
 }
 
 .coverPic {
@@ -247,6 +268,7 @@ span.cursor {
     overflow: hidden;
     position: relative;
     border: 10px solid #ccc;
+    transform: rotate(30deg);
 }
 
 .myPicture {
@@ -307,8 +329,7 @@ span.cursor {
 
 @media (max-width:991.66px) {
     #heroSection {
-        background-image:
-            linear-gradient(to bottom left,
+        background-image: linear-gradient(to bottom left,
                 rgb(255, 255, 255, 0.8) 0%,
                 /* Top : couleur pleine */
                 rgba(255, 255, 255, 0.5) 50%,
