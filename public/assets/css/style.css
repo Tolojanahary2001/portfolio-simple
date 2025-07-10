@@ -206,6 +206,10 @@ body {
     background-attachment: fixed;
 }
 
+p {
+    font-size: 20px;
+
+}
 
 
 @media (max-width:991.66px) {
@@ -297,6 +301,10 @@ h1,
     font-weight: 700 !important;
     color: var(--black);
     font-family: montserrat;
+}
+
+h2 {
+    font-weight: 700;
 }
 
 span#typedText,
@@ -483,6 +491,22 @@ span.cursor {
         width: 30px !important;
         height: 30px !important;
     }
+
+    #about {
+        /* height: auto !important; */
+        margin-bottom: 150px;
+    }
+
+    .aboutPicture {
+        width: 200px !important;
+    }
+
+    .techIcon {
+        height: 30px !important;
+        width: 40px !important;
+        object-fit: contain;
+        /* display: inline-block; */
+    }
 }
 
 
@@ -496,7 +520,7 @@ span.cursor {
 }
 
 .aboutPicture {
-    width: 300px;
+    width: 400px;
 }
 
 /* technologie */
@@ -522,4 +546,19 @@ span.cursor {
 .progress-bar {
     background-color: #0070FF !important;
     border-radius: 20px !important;
+}
+
+/* portfolio */
+#portfolio {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cardPf {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 20px;
 }
