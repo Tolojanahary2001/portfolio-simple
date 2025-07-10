@@ -478,16 +478,10 @@ span.cursor {
         font-size: 25px !important;
     }
 
-    .nav-link {
-        width: 30px !important;
-        height: 30px !important;
-    }
-
     .navbar-nav {
         /* gap: 20px !important; */
         gap: 0 !important;
         width: 100%;
-        padding: 10px 20px !important;
         justify-content: space-between;
 
     }
