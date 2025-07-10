@@ -484,6 +484,11 @@ span.cursor {
         justify-content: center !important;
     }
 
+    #technologie,
+    #portfolio {
+        height: auto !important;
+    }
+
 }
 
 @media (max-width:576px) {
@@ -521,6 +526,7 @@ span.cursor {
         /* height: auto !important; */
         margin-bottom: 150px;
     }
+
 
     .aboutPicture {
         width: 200px !important;
