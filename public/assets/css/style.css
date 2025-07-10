@@ -200,10 +200,7 @@
 }
 
 body {
-    /* background-color: var(--white); */
-    /* background-image: url("../img/particle.gif"); */
     background-color: #eae6e6ac !important;
-
     background-position: bottom;
     background-size: cover;
     background-attachment: fixed;
@@ -212,16 +209,9 @@ body {
 
 
 @media (max-width:991.66px) {
-    * {
-        font-size: 18px;
+    p {
+        font-size: 18px !important;
     }
-}
-
-
-
-
-p {
-    font-size: 20px;
 }
 
 p.hello {
@@ -365,21 +355,14 @@ span.cursor {
 .mypicContainer {
     background-image: linear-gradient(to right,
             rgba(0, 112, 225, 1) 0%,
-            /* Top : couleur pleine */
-            rgba(0, 112, 255, 0.5) 50%,
-            /* Milieu : couleur + transparence */
-            rgba(0, 112, 255, 0.0) 100%
-            /* Bas : image visible */
-        ),
-        url("../bg-white.jpeg");
-    /* background-color: var(--blue); */
+            #0070ff80 50%,
+            rgba(0, 112, 255, 0.0) 100%);
     border-top-left-radius: 150px;
     border-bottom-left-radius: 150px;
     position: absolute;
     padding: 20px;
     justify-content: left;
     right: 0;
-    /* transform: rotate(-30deg); */
     border: none;
     outline: none;
 }
@@ -387,12 +370,10 @@ span.cursor {
 .coverPic {
     background-color: white;
     display: inline-block;
-    /* padding: 0 0px; */
     border-radius: 50%;
     overflow: hidden;
     position: relative;
     border: 10px solid #ccc;
-    /* transform: rotate(30deg); */
 }
 
 .myPicture {
@@ -415,16 +396,7 @@ span.cursor {
     font-weight: 500 !important;
 }
 
-.fleche {
-    border: 2px solid #0070FF;
-    border-radius: 50%;
-    width: 30px;
-    position: absolute;
-    left: 47%;
-    bottom: 20%;
-    animation: upDown 2s ease-in-out infinite;
-    transition: all 0.3s;
-}
+
 
 @keyframes blink {
 
@@ -438,40 +410,13 @@ span.cursor {
     }
 }
 
-@keyframes upDown {
 
-    0%,
-    100% {
-        bottom: 5%;
-    }
-
-    50% {
-        bottom: 8%;
-    }
-}
 
 
 @media (max-width:991.66px) {
-    #heroSection {
-        background-image: linear-gradient(to bottom left,
-                rgb(255, 255, 255, 0.8) 0%,
-                /* Top : couleur pleine */
-                rgba(255, 255, 255, 0.5) 50%,
-                /* Milieu : couleur + transparence */
-                rgb(255, 255, 255, 0.5) 100%
-                /* Bas : image visible */
-            ),
-            url("../bg-white.jpeg");
-        background-position: left bottom;
-        background-attachment: fixed;
-        position: relative;
-        top: -10vh
-    }
 
     .hero {
-        /* height: auto !important; */
         text-align: center !important;
-        padding: 100px 0;
     }
 
     .mypicContainer {
@@ -545,4 +490,36 @@ span.cursor {
 #about {
     width: 100%;
     height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.aboutPicture {
+    width: 300px;
+}
+
+/* technologie */
+#technologie {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.techIcon {
+    height: 40px;
+    width: 50px;
+    object-fit: contain;
+    /* display: inline-block; */
+}
+
+.progress {
+    height: auto !important;
+}
+
+.progress-bar {
+    background-color: #0070FF !important;
+    border-radius: 20px !important;
 }
