@@ -1,5 +1,5 @@
 const texts = ["Développeur Front-end", "Web Designer UI/UX", "Intégrateur"];
-let index = 0;
+let index = 0; 
 let charIndex = 0;
 let isDeleting = false;
 
