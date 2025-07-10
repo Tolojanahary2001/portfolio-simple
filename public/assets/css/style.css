@@ -150,10 +150,10 @@
     bottom: 2%;
     width: 100%;
     z-index: 999;
+
 }
 
 .nav-link {
-    color: #fff !important;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -161,6 +161,10 @@
     height: 40px;
     border-radius: 100%;
     background-color: #fff;
+}
+
+.nav-link.active {
+    background-color: #0070FF;
 }
 
 .nav-link.home {
@@ -183,12 +187,34 @@
     background-image: url("../img/icons/contact.svg");
 }
 
+.nav-link.home.active {
+    background-image: url("../img/icons/home-active.svg");
+}
+
+.nav-link.about.active {
+    background-image: url("../img/icons/about-active.svg");
+}
+
+.nav-link.technologies.active {
+    background-image: url("../img/icons/technologies-active.svg");
+}
+
+.nav-link.portfolio.active {
+    background-image: url("../img/icons/portfolio-active.svg");
+}
+
+.nav-link.contact.active {
+    background-image: url("../img/icons/contact-active.svg");
+}
+
+
 .navbar-nav {
-    background-color: #0070FF;
+    background-color: #fff;
     border-radius: 50px;
     gap: 40px;
     padding: 20px 30px !important;
     flex-direction: row !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 
