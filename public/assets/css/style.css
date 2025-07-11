@@ -564,14 +564,15 @@ span.cursor {
 }
 
 .techIcon {
-    height: 40px;
-    width: 50px;
     object-fit: contain;
     /* display: inline-block; */
 }
 
 .progress {
     height: auto !important;
+    border: 1px solid #333;
+    border-radius: 20px !important;
+
 }
 
 .progress-bar {
