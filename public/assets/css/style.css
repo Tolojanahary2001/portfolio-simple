@@ -570,7 +570,8 @@ span.cursor {
 
 .progress {
     height: auto !important;
-    border: 1px solid #333;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
     border-radius: 20px !important;
 
 }
@@ -593,4 +594,113 @@ span.cursor {
     background-color: #fff;
     padding: 20px;
     border-radius: 20px;
+}
+
+/* contact */
+#contact {
+    height: 100vh;
+}
+
+.contact-container {
+    background-color: #0070FF;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+.left-contact {
+    height: 100%;
+    background-color: #0070FF;
+}
+
+.formulaire {
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    width: 100%;
+    background-color: #fff;
+}
+
+input {
+    height: 3.2rem;
+}
+
+textarea {
+    height: 6rem;
+}
+
+input,
+textarea {
+    margin-bottom: 10px;
+    width: 100%;
+    border: #0070FF solid 2px;
+    border-radius: 20px !important;
+}
+
+.input-container {
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px
+}
+
+.input-container input {
+    width: 100%;
+    padding: 20px;
+    border: 1px solid #0070FF;
+    border-radius: 0;
+    outline: none;
+    background: none;
+    color: #333
+}
+
+.input-container textarea {
+    width: 100%;
+    padding-left: 20px;
+    padding-top: 10px;
+    border: 1px solid #0070FF;
+    border-radius: 0;
+    outline: none;
+    background: none;
+    color: #333
+}
+
+
+.input-container .label {
+    position: absolute;
+    left: 20px;
+    top: 24px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #333;
+    transition: all 0.3s ease
+}
+
+input:focus+.label,
+textarea:focus+.label {
+    top: 0px !important;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: #0070FF;
+    background: #fff;
+    font-size: 0.8em;
+    border: none !important
+}
+
+/* Label en haut quand focus OU input non vide */
+.input-container input:focus+.label,
+.input-container input:not(:placeholder-shown)+.label,
+.input-container textarea:focus+.label,
+.input-container textarea:not(:placeholder-shown)+.label {
+    top: 0px !important;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: #0070FF;
+    background: #fff;
+    font-size: 0.8em;
+}
+
+footer {
+    background-color: #663A16;
+    color: #fff;
+    padding: 40px 0;
 }
