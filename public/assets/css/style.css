@@ -234,7 +234,6 @@ body {
 
 p {
     font-size: 20px;
-
 }
 
 
@@ -622,7 +621,7 @@ span.cursor {
 }
 
 input {
-    height: 3.2rem;
+    height: 3rem;
 }
 
 textarea {
@@ -634,7 +633,6 @@ textarea {
     margin-bottom: 10px;
     width: 100%;
     border: #0070FF solid 2px;
-    border-radius: 20px !important;
 }
 
 .input-container {
@@ -647,7 +645,7 @@ textarea {
     width: 100%;
     padding: 20px;
     border: 1px solid #0070FF;
-    border-radius: 0;
+    border-radius: 30px;
     outline: none;
     background: none;
     color: #333
@@ -658,7 +656,7 @@ textarea {
     padding-left: 20px;
     padding-top: 10px;
     border: 1px solid #0070FF;
-    border-radius: 0;
+    border-radius: 30px;
     outline: none;
     background: none;
     color: #333
@@ -700,7 +698,22 @@ textarea:focus+.label {
 }
 
 footer {
-    background-color: #663A16;
+    background-image: url("../img/vacance.png");
+    background-attachment: fixed;
     color: #fff;
+    height: 30vh;
+}
+
+.bg-footer {
+    background-color: #006eff9c;
+    backdrop-filter: blur(10px);
+    height: 100%;
     padding: 40px 0;
+}
+
+.footer-hr {
+    border-bottom: 1px solid #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
