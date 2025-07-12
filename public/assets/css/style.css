@@ -488,6 +488,9 @@ span.cursor {
         height: auto !important;
     }
 
+    footer {
+        height: 40vh !important;
+    }
 }
 
 @media (max-width:576px) {
@@ -615,7 +618,7 @@ span.cursor {
 .formulaire {
     display: flex;
     flex-direction: column;
-    padding: 40px;
+    /* padding: 40px; */
     width: 100%;
     background-color: #fff;
 }
@@ -701,7 +704,7 @@ footer {
     background-image: url("../img/vacance.png");
     background-attachment: fixed;
     color: #fff;
-    height: 30vh;
+    height: 35vh;
 }
 
 .bg-footer {
