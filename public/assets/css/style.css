@@ -236,6 +236,9 @@ p {
     font-size: 20px;
 }
 
+.border-radius-20 {
+    border-radius: 20px;
+}
 
 @media (max-width:991.66px) {
     p {
@@ -556,6 +559,8 @@ span.cursor {
     width: 400px;
 }
 
+
+
 /* technologie */
 #technologie {
     width: 100%;
@@ -568,6 +573,15 @@ span.cursor {
 .techIcon {
     object-fit: contain;
     /* display: inline-block; */
+}
+
+.techContainer {
+    background-color: #fff;
+}
+
+.iconDesign {
+    display: flex;
+    justify-content: space-around;
 }
 
 .progress {

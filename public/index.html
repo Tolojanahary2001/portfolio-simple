@@ -102,7 +102,7 @@
     <section id="about">
         <div class="container">
             <div class="row">
-                <div class="col-md-6 py-4 d-flex justify-content-center align-items-center ">
+                <div class="col-md-6 py-4 d-flex justify-content-center align-items-start ">
                     <img src="assets/img/dev.png" class="aboutPicture" alt="">
                 </div>
                 <div class=" col-md-6">
@@ -112,14 +112,20 @@
                         répondant à des besoins concrets, avec un focus sur JavaScript, l’esthétique des interfaces et
                         l’expérience utilisateur.
                     </p>
-
-                    <button class="myBtn myBtn-primary">Voir mes atouts</button>
-
-                    <!-- <div class="atouts">
-                        <img src="assets/img/icons/meditation.svg" width="40" alt="">
-                        <img src="assets/img/icons/organised.svg" width="40" alt="">
-                        <img src="assets/img/icons/dynamique.svg" width="40" alt="">
-                    </div> -->
+                    <div class="atouts row py-3">
+                        <div class="col-4 text-center">
+                            <img src="assets/img/icons/meditation.svg" width="40" alt="">
+                            <p class="pt-2">Calme</p>
+                        </div>
+                        <div class="col-4 text-center">
+                            <img src="assets/img/icons/dynamique.svg" width="40" alt="">
+                            <p class="pt-2">Dynamique</p>
+                        </div>
+                        <div class="col-4 text-center">
+                            <img src="assets/img/icons/organised.svg" width="40" alt="">
+                            <p class="pt-2">Organisé</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -127,79 +133,109 @@
 
     <section id="technologie">
         <div class="container py-5">
-            <h2 class="text-center mb-3">Technologies</h2>
-            <div class="row">
-                <div class="col-md-6">
-                    <h3 class="text-center">Front-end</h3>
-                    <div class="d-flex align-items-center gap-3 mb-4">
-                        <img src="assets/img/icons/html.svg" class="techIcon" width="40" alt="">
-                        <div class="progress w-100">
-                            <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="25"
-                                aria-valuemin="0" aria-valuemax="100">90%</div>
-                        </div>
-                    </div>
-                    <div class="d-flex align-items-center gap-3 mb-4">
-                        <img src="assets/img/icons/css.svg" class="techIcon" width="40" alt="">
-                        <div class="progress w-100">
-                            <div class="progress-bar" role="progressbar" style="width: 80%;" aria-valuenow="25"
-                                aria-valuemin="0" aria-valuemax="100">80%</div>
-                        </div>
-                    </div>
-                    <div class="d-flex align-items-center gap-3 mb-4">
-                        <img src="assets/img/icons/javascript.svg" class="techIcon" width="40" alt="">
-                        <div class="progress w-100">
-                            <div class="progress-bar" role="progressbar" style="width: 70%;" aria-valuenow="25"
-                                aria-valuemin="0" aria-valuemax="100">70%</div>
-                        </div>
-                    </div>
-                    <div class="d-flex align-items-center gap-3 mb-4">
-                        <img src="assets/img/icons/bootstrap.svg" class="techIcon" width="40" alt="">
-                        <div class="progress w-100">
-                            <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="25"
-                                aria-valuemin="0" aria-valuemax="100">90%</div>
-                        </div>
-                    </div>
-                    <div class="d-flex align-items-center gap-3 mb-4">
-                        <img src="assets/img/icons/react.svg" class="techIcon" width="40" alt="">
-                        <div class="progress w-100">
-                            <div class="progress-bar" role="progressbar" style="width: 50%;" aria-valuenow="25"
-                                aria-valuemin="0" aria-valuemax="100">50%</div>
-                        </div>
-                    </div>
 
+            <div class="row">
+                <div class="col-lg-4 p-5">
+                    <h2 class="mb-3">Technologies</h2>
+
+                    <p>Bien que mes compétences soient
+                        davantage orientées vers
+                        les technologies d’interface et leurs
+                        frameworks, je
+                        possède également des notions en back-end. Par ailleurs, mon profil créatif s'étend à la
+                        maîtrise de
+                        logiciels de design :</p>
+                    <div class="iconDesign">
+                        <img src="assets/img/icons/photoshop.png" width="40" alt="">
+                        <img src="assets/img/icons/illustrator.png" width="40" alt="">
+                        <img src="assets/img/icons/indesign.png" width="40" alt="">
+                        <img src="assets/img/icons/figma.png" width="25" alt="">
+                    </div>
                 </div>
-                <div class="col-md-6">
-                    <h3 class="text-center">Back-end</h3>
-                    <div class="d-flex align-items-center gap-3 mb-4">
-                        <img src="assets/img/icons/php.svg" class="techIcon" width="40" alt="">
-                        <div class="progress w-100">
-                            <div class="progress-bar" role="progressbar" style="width: 60%;" aria-valuenow="25"
-                                aria-valuemin="0" aria-valuemax="100">60%</div>
+                <div class="col-lg-8 techContainer p-5 border-radius-20">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h3 class="text-center">Front-end</h3>
+                            <div class="d-flex align-items-center gap-3 mb-4">
+                                <img src="assets/img/icons/html.svg" class="techIcon" width="50" alt="">
+                                <div class="progress w-100">
+                                    <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="25"
+                                        aria-valuemin="0" aria-valuemax="100">90%</div>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center gap-3 mb-4">
+                                <img src="assets/img/icons/css.svg" class="techIcon" width="50" alt="">
+                                <div class="progress w-100">
+                                    <div class="progress-bar" role="progressbar" style="width: 80%;" aria-valuenow="25"
+                                        aria-valuemin="0" aria-valuemax="100">80%</div>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center gap-3 mb-4">
+                                <img src="assets/img/icons/javascript.svg" class="techIcon" width="50" alt="">
+                                <div class="progress w-100">
+                                    <div class="progress-bar" role="progressbar" style="width: 70%;" aria-valuenow="25"
+                                        aria-valuemin="0" aria-valuemax="100">70%</div>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center gap-3 mb-4">
+                                <img src="assets/img/icons/bootstrap.svg" class="techIcon" width="50" alt="">
+                                <div class="progress w-100">
+                                    <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="25"
+                                        aria-valuemin="0" aria-valuemax="100">90%</div>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center gap-3 mb-4">
+                                <img src="assets/img/icons/react.svg" class="techIcon" width="50" alt="">
+                                <div class="progress w-100">
+                                    <div class="progress-bar" role="progressbar" style="width: 50%;" aria-valuenow="25"
+                                        aria-valuemin="0" aria-valuemax="100">50%</div>
+                                </div>
+                            </div>
+
                         </div>
-                    </div>
-                    <div class="d-flex align-items-center gap-3 mb-4">
-                        <img src="assets/img/icons/nodejs.svg" class="techIcon" width="40" alt="">
-                        <div class="progress w-100">
-                            <div class="progress-bar" role="progressbar" style="width: 50%;" aria-valuenow="25"
-                                aria-valuemin="0" aria-valuemax="100">50%</div>
-                        </div>
-                    </div>
-                    <div class="d-flex align-items-center gap-3 mb-4">
-                        <img src="assets/img/icons/django.svg" class="techIcon" width="40" alt="">
-                        <div class="progress w-100">
-                            <div class="progress-bar" role="progressbar" style="width: 60%;" aria-valuenow="25"
-                                aria-valuemin="0" aria-valuemax="100">60%</div>
-                        </div>
-                    </div>
-                    <div class="d-flex align-items-center gap-3 mb-4">
-                        <img src="assets/img/icons/mysql.svg" class="techIcon" width="40" alt="">
-                        <div class="progress w-100">
-                            <div class="progress-bar" role="progressbar" style="width: 50%;" aria-valuenow="25"
-                                aria-valuemin="0" aria-valuemax="100">50%</div>
+                        <div class="col-md-6">
+                            <h3 class="text-center">Back-end</h3>
+                            <div class="d-flex align-items-center gap-3 mb-4">
+                                <img src="assets/img/icons/php.svg" class="techIcon" width="50" alt="">
+                                <div class="progress w-100">
+                                    <div class="progress-bar" role="progressbar" style="width: 60%;" aria-valuenow="25"
+                                        aria-valuemin="0" aria-valuemax="100">60%</div>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center gap-3 mb-4">
+                                <img src="assets/img/icons/nodejs.svg" class="techIcon" width="50" alt="">
+                                <div class="progress w-100">
+                                    <div class="progress-bar" role="progressbar" style="width: 50%;" aria-valuenow="25"
+                                        aria-valuemin="0" aria-valuemax="100">50%</div>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center gap-3 mb-4">
+                                <img src="assets/img/icons/django.svg" class="techIcon" width="50" alt="">
+                                <div class="progress w-100">
+                                    <div class="progress-bar" role="progressbar" style="width: 60%;" aria-valuenow="25"
+                                        aria-valuemin="0" aria-valuemax="100">60%</div>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center gap-3 mb-4">
+                                <img src="assets/img/icons/mysql.svg" class="techIcon" width="50" alt="">
+                                <div class="progress w-100">
+                                    <div class="progress-bar" role="progressbar" style="width: 50%;" aria-valuenow="25"
+                                        aria-valuemin="0" aria-valuemax="100">50%</div>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center gap-3 mb-4">
+                                <img src="assets/img/icons/git.svg" class="techIcon" width="50" alt="">
+                                <div class="progress w-100">
+                                    <div class="progress-bar" role="progressbar" style="width: 70%;" aria-valuenow="25"
+                                        aria-valuemin="0" aria-valuemax="100">70%</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+
         </div>
     </section>
 
