@@ -161,10 +161,13 @@
     height: 40px;
     border-radius: 100%;
     background-color: #fff;
+    transition: all 0.3s;
 }
 
 .nav-link.active {
     background-color: #0070FF;
+    transition: all 0.3s;
+
 }
 
 .nav-link.home {
