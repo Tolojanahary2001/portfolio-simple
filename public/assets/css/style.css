@@ -225,6 +225,14 @@
     box-sizing: border-box;
 }
 
+.text-underlined {
+    text-decoration: underline;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
 body {
     background-color: #eae6e6ac !important;
     background-position: bottom;
@@ -538,8 +546,8 @@ span.cursor {
     }
 
     .techIcon {
-        height: 30px !important;
-        width: 40px !important;
+        height: 50px !important;
+        width: 50px !important;
         object-fit: contain;
         /* display: inline-block; */
     }
@@ -625,8 +633,21 @@ span.cursor {
 }
 
 .left-contact {
-    height: 100%;
     background-color: #0070FF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #fff;
+}
+
+.contactLink {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 20px;
 }
 
 .formulaire {
