@@ -154,62 +154,20 @@
 }
 
 .nav-link {
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
     width: 40px;
     height: 40px;
-    border-radius: 100%;
-    background-color: #fff;
     transition: all 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.nav-link.active {
-    background-color: #0070FF;
-    transition: all 0.3s;
-
+.nav-link i {
+    font-size: 24px;
+    color: #0070FF;
+    stroke: #ccc;
+    transition: color 0.3s ease;
 }
-
-.nav-link.home {
-    background-image: url("../img/icons/home.svg");
-}
-
-.nav-link.about {
-    background-image: url("../img/icons/about.svg");
-}
-
-.nav-link.technologies {
-    background-image: url("../img/icons/technologies.svg");
-}
-
-.nav-link.portfolio {
-    background-image: url("../img/icons/portfolio.svg");
-}
-
-.nav-link.contact {
-    background-image: url("../img/icons/contact.svg");
-}
-
-.nav-link.home.active {
-    background-image: url("../img/icons/home-active.svg");
-}
-
-.nav-link.about.active {
-    background-image: url("../img/icons/about-active.svg");
-}
-
-.nav-link.technologies.active {
-    background-image: url("../img/icons/technologies-active.svg");
-}
-
-.nav-link.portfolio.active {
-    background-image: url("../img/icons/portfolio-active.svg");
-}
-
-.nav-link.contact.active {
-    background-image: url("../img/icons/contact-active.svg");
-}
-
 
 .navbar-nav {
     background-color: #fff;
