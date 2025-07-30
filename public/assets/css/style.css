@@ -208,6 +208,14 @@
     box-sizing: border-box;
 }
 
+#hero,
+#about,
+#technologie,
+#portfolio,
+#contact {
+    height: 100vh;
+}
+
 .text-underlined {
     text-decoration: underline;
 }
@@ -227,6 +235,10 @@ p {
     font-size: 20px;
 }
 
+.border-radius-10 {
+    border-radius: 10px;
+}
+
 .border-radius-20 {
     border-radius: 20px;
 }
@@ -234,6 +246,14 @@ p {
 @media (max-width:991.66px) {
     p {
         font-size: 18px !important;
+    }
+
+    #hero,
+    #about,
+    #technologie,
+    #portfolio,
+    #contact {
+        height: auto !important;
     }
 }
 
@@ -338,10 +358,6 @@ span.cursor {
 
 
 /* hero */
-#hero {
-    height: 100vh;
-}
-
 .hero {
     height: 100%;
     display: flex;
@@ -480,11 +496,31 @@ span.cursor {
     #portfolio {
         height: auto !important;
     }
+}
 
+@media (min-height:0px) {
     footer {
-        height: 40vh !important;
+        height: 100vh !important;
     }
 }
+
+@media (min-height:320px) {
+    footer {
+        height: 30vh !important;
+    }
+}
+
+@media (max-height:725px) {
+    footer {
+        height: 50vh !important;
+    }
+}
+
+/* @media (max-height:991px) {
+    footer {
+        height: 30vh !important;
+    }
+} */
 
 @media (max-width:576px) {
 
@@ -539,7 +575,6 @@ span.cursor {
 /* about */
 #about {
     width: 100%;
-    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -554,7 +589,6 @@ span.cursor {
 /* technologie */
 #technologie {
     width: 100%;
-    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -589,7 +623,6 @@ span.cursor {
 
 /* portfolio */
 #portfolio {
-    height: 100vh;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -603,10 +636,6 @@ span.cursor {
 }
 
 /* contact */
-#contact {
-    height: 100vh;
-}
-
 .contact-container {
     background-color: #0070FF;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
