@@ -255,6 +255,10 @@ p {
     #contact {
         height: auto !important;
     }
+
+    .input-container {
+        margin-bottom: 15px !important;
+    }
 }
 
 p.hello {
@@ -555,7 +559,7 @@ span.cursor {
 
     #about {
         /* height: auto !important; */
-        margin-bottom: 150px;
+        margin-bottom: 50px;
     }
 
 
@@ -639,7 +643,7 @@ span.cursor {
 .contact-container {
     background-color: #0070FF;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 50px;
+    border-radius: 40px;
     overflow: hidden;
 }
 

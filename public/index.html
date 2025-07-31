@@ -17,8 +17,7 @@
     <title>Tolojanahary-Portfolio</title>
 </head>
 
-<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="0" class="scrollspy-example" tabindex="0"
-    class="body-lock">
+<body class="body-lock">
     <div class="bg-animated">
         <div class="box">
             <div class="square"></div>
@@ -379,16 +378,14 @@
         </div>
     </footer>
     <script src="assets/js/script.js"></script>
+    <script src="assets/js/navbar.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
     <!-- AOS -->
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
-        const scrollSpy = new bootstrap.ScrollSpy(document.body, {
-            target: '.navbar-nav',
-            offset: 100
-        });
+
         AOS.init({
             duration: 800, // durée de l'animation en ms
             once: true     // ne s’anime qu’une seule fois
@@ -414,6 +411,8 @@
         // Sur chargement et sur scroll
         document.addEventListener('scroll', updateIcons);
         document.addEventListener('DOMContentLoaded', updateIcons);
+
+
     </script>
 
 </body>
