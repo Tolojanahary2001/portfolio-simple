@@ -281,7 +281,7 @@ p.hello {
     background: transparent;
     border: solid 2px var(--blue);
     border-radius: 30px;
-    transition: all 0.3s;
+    transition: all 0.3s ease-in;
     font-weight: 500;
 }
 
@@ -298,6 +298,7 @@ p.hello {
 .myBtn-secondary {
     background-color: transparent;
     color: var(--black);
+    backdrop-filter: blur(5px);
 }
 
 .myBtn-secondary:hover {
@@ -515,7 +516,7 @@ span.cursor {
 
 @media (max-height:725px) {
     footer {
-        height: 50vh !important;
+        height: 40vh !important;
     }
 }
 
@@ -682,7 +683,7 @@ textarea {
 
 input,
 textarea {
-    margin-bottom: 0;
+    margin-bottom: 5px;
     width: 100%;
     border: #0070FF solid 2px;
 }
