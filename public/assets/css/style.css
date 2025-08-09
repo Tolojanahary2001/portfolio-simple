@@ -330,6 +330,12 @@ a {
     color: var(--white);
 }
 
+.myBtn-white {
+    background-color: var(--white);
+    border: 1px solid var(--white);
+    color: var(--black);
+}
+
 .icon-wrapper {
     position: relative;
     width: 20px;

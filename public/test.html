@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .scroller__inner {
+            padding-block: 1rem;
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 1rem;
+        }
+
+        .scroller__inner>div {
+            position: relative;
+            flex-shrink: 0;
+            transition: all 0.3s;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .scroller__inner>div button {
+            transition: all 0.3s;
+            position: absolute;
+            opacity: 0;
+            z-index: 2;
+        }
+
+        .scroller__inner>div:hover button,
+        .scroller__inner>div.active button {
+            opacity: 1;
+        }
+
+        .scroller__inner>div:hover {
+            cursor: pointer;
+        }
+
+        .scroller__inner>div img {
+            transition: all 0.3s;
+            z-index: 1;
+            border-radius: 50px;
+
+        }
+
+        .scroller__inner>div:hover img,
+        .scroller__inner>div.active img {
+            filter: blur(1px);
+            transform: scale(1.2);
+        }
+
+        /* Animation scroll */
+        .scroller[data-animated="true"] {
+            overflow: hidden;
+            -webkit-mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+            mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+        }
+
+        .scroller[data-animated="true"] .scroller__inner {
+            width: max-content;
+            animation: scroll 20s linear infinite;
+        }
+
+        .scroller:hover .scroller__inner {
+            animation-play-state: paused;
+        }
+
+        @keyframes scroll {
+            to {
+                transform: translate(calc(-50% - 0.5rem));
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="scroller">
+        <div class="scroller__inner">
+            <div><img src="assets/img/portfolio.png" width="200" alt="" /><button>En savoir plus</button></div>
+            <div><img src="assets/img/portfolio1.png" width="200" alt="" /><button>En savoir plus</button></div>
+            <div><img src="assets/img/portfolio2.png" width="200" alt="" /><button>En savoir plus</button></div>
+            <div><img src="assets/img/portfolio3.png" width="200" alt="" /><button>En savoir plus</button></div>
+            <div><img src="assets/img/miel.png" width="200" alt="" /><button>En savoir plus</button></div>
+            <div><img src="assets/img/miel.png" width="200" alt="" /><button>En savoir plus</button></div>
+        </div>
+    </div>
+
+    <script>
+        // Scroll infini
+        const scrollers = document.querySelectorAll(".scroller");
+        if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+            scrollers.forEach((scroller) => {
+                scroller.setAttribute("data-animated", true);
+                const scrollerInner = scroller.querySelector(".scroller__inner");
+                const scrollerContent = Array.from(scrollerInner.children);
+                scrollerContent.forEach((item) => {
+                    const duplicatedItem = item.cloneNode(true);
+                    duplicatedItem.setAttribute("aria-hidden", true);
+                    scrollerInner.appendChild(duplicatedItem);
+                });
+            });
+        }
+
+        // Gestion du clic sur mobile
+        document.querySelectorAll(".scroller__inner > div").forEach(card => {
+            card.addEventListener("click", () => {
+                // Sur mobile → toggle l'état actif
+                if (window.innerWidth <= 768) {
+                    // Retirer l'état actif des autres
+                    document.querySelectorAll(".scroller__inner > div.active").forEach(c => {
+                        if (c !== card) c.classList.remove("active");
+                    });
+                    // Toggle la carte actuelle
+                    card.classList.toggle("active");
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>

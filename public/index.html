@@ -15,6 +15,70 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/fontawesome/css/all.css">
     <title>Tolojanahary-Portfolio</title>
+    <style>
+        .scroller__inner {
+            padding-block: 1rem;
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 1rem;
+        }
+
+        .scroller__inner>div {
+            flex-shrink: 0;
+            transition: all 0.3s;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .scroller__inner>div button {
+            transition: all 0.3s;
+            position: absolute;
+            opacity: 0;
+            z-index: 2;
+        }
+
+        .scroller__inner>div:hover button {
+            opacity: 1;
+        }
+
+        .scroller__inner>div:hover {
+            cursor: pointer;
+        }
+
+        .scroller__inner>div img {
+            transition: all 0.3s;
+            z-index: 1;
+        }
+
+        .scroller__inner>div:hover img {
+            filter: blur(1px);
+            transform: scale(1.2);
+        }
+
+        .scroller[data-animated="true"] {
+            overflow: hidden;
+            -webkit-mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+            mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+        }
+
+        .scroller[data-animated="true"] .scroller__inner {
+            width: max-content;
+            animation: scroll 20s linear infinite;
+        }
+
+        .scroller:hover .scroller__inner {
+            animation-play-state: paused;
+        }
+
+        @keyframes scroll {
+            to {
+                transform: translate(calc(-50% - 0.5rem));
+            }
+        }
+    </style>
 </head>
 
 <body class="body-lock">
@@ -288,33 +352,20 @@
                     valeur mes
                     compétences en développement frontend et en webdesign.</p>
             </div>
-            <div class="row  mt-5">
-                <div class="col-lg-4 py-3 col-md-6 mx-auto">
-                    <div class="cardPf" data-aos="fade-up" data-aos-delay="500">
-                        <img src="assets/img/portfolio1.png" class="img-fluid border-radius-10" alt="">
-                        <div class="descriptionPf mt-3">
-                            <h4>Start-up</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 py-3 col-md-6 mx-auto">
-                    <div class="cardPf" data-aos="fade-up" data-aos-delay="700">
 
-                        <img src="assets/img/portfolio2.png" class="img-fluid border-radius-10" alt="">
-                        <div class="descriptionPf mt-3">
-                            <h4>Tourisme</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 py-3 col-md-6 mx-auto">
-                    <div class="cardPf" data-aos="fade-up" data-aos-delay="900">
-                        <img src="assets/img/portfolio3.png" class="img-fluid border-radius-10" alt="">
-                        <div class="descriptionPf mt-3">
-                            <h4>Entreprise d'ingénierie</h4>
-                        </div>
-                    </div>
+            <div class="scroller">
+                <div class="scroller__inner">
+                    <div><img src="assets/img/portfolio.png" width="400" alt="" /><button>En savoir plus</button></div>
+                    <div><img src="assets/img/portfolio1.png" width="400" alt="" /><button>En savoir plus</button></div>
+                    <div><img src="assets/img/portfolio2.png" width="400" alt="" /><button>En savoir plus</button></div>
+                    <div><img src="assets/img/portfolio3.png" width="400" alt="" /><button>En savoir plus</button></div>
+                    <div><img src="assets/img/miel.png" width="400" alt="" /><button>En savoir plus</button></div>
+                    <div><img src="assets/img/miel.png" width="400" alt="" /><button>En savoir plus</button></div>
                 </div>
             </div>
+        </div>
+
+
     </section>
 
     <section id="contact" class="py-5">
@@ -421,7 +472,22 @@
         document.addEventListener('scroll', updateIcons);
         document.addEventListener('DOMContentLoaded', updateIcons);
 
+        const scrollers = document.querySelectorAll(".scroller");
 
+        if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+            scrollers.forEach((scroller) => {
+                scroller.setAttribute("data-animated", true);
+
+                const scrollerInner = scroller.querySelector(".scroller__inner");
+                const scrollerContent = Array.from(scrollerInner.children);
+
+                scrollerContent.forEach((item) => {
+                    const duplicatedItem = item.cloneNode(true);
+                    duplicatedItem.setAttribute("aria-hidden", true);
+                    scrollerInner.appendChild(duplicatedItem);
+                });
+            });
+        } 
     </script>
 
 </body>
