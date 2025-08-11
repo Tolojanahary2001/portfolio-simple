@@ -153,35 +153,7 @@
     transition: transform 2s ease-in-out, opacity 2s ease-in-out;
 }
 
-/* État invisible, en dessous de l'écran */
-.navbar.hidden-before-load {
-    opacity: 0;
-    transform: translateY(100%);
-}
 
-.nav-link.active i {
-    animation: clignote 2s infinite;
-}
-
-@keyframes clignote {
-    0% {
-        text-shadow: none;
-    }
-
-    50% {
-        text-shadow: 0 0 5px #0070ff;
-    }
-
-    100% {
-        text-shadow: none;
-    }
-}
-
-/* État visible, à sa place */
-.navbar.visible-after-load {
-    opacity: 1;
-    transform: translateY(0);
-}
 
 
 .nav-link {
