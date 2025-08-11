@@ -498,6 +498,10 @@ span.cursor {
     #portfolio {
         height: auto !important;
     }
+
+    .img-portfolio {
+        width: 300px !important;
+    }
 }
 
 @media (min-height:0px) {
@@ -517,12 +521,6 @@ span.cursor {
         height: 40vh !important;
     }
 }
-
-/* @media (max-height:991px) {
-    footer {
-        height: 30vh !important;
-    }
-} */
 
 @media (max-width:576px) {
 
@@ -629,12 +627,6 @@ span.cursor {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.cardPf {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 20px;
 }
 
 /* contact */
