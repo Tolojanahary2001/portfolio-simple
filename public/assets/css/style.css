@@ -147,9 +147,9 @@
 /* Position normale */
 .navbar {
     position: fixed !important;
-    bottom: 2%;
+    bottom: 2% !important;
     width: 100%;
-    z-index: 999;
+    z-index: 1;
     transition: transform 2s ease-in-out, opacity 2s ease-in-out;
 }
 
@@ -504,24 +504,6 @@ span.cursor {
     }
 }
 
-@media (min-height:0px) {
-    footer {
-        height: 100vh !important;
-    }
-}
-
-@media (min-height:320px) {
-    footer {
-        height: 30vh !important;
-    }
-}
-
-@media (max-height:725px) {
-    footer {
-        height: 40vh !important;
-    }
-}
-
 @media (max-width:576px) {
 
     #heroSection {
@@ -727,7 +709,17 @@ span.cursor {
 }
 
 .left-contact {
-    background-color: #0070FF;
+    background-image: url("../img/vac.png");
+    background-size: cover;
+    background-position: bottom;
+
+}
+
+.bg-left-contact {
+    background-color: #006effa7;
+    backdrop-filter: blur(1px);
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -830,19 +822,25 @@ textarea:focus+.label {
 }
 
 footer {
-    color: #fff;
-    height: 35vh;
+    color: #333;
+    z-index: 2;
+    position: relative;
+}
+
+footer p {
+    backdrop-filter: none;
 }
 
 .bg-footer {
-    background-color: #0070ff;
+    background-color: #ffffff69;
     backdrop-filter: blur(10px);
-    height: 100%;
     padding: 40px 0;
+    position: relative;
+
 }
 
 .footer-hr {
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid #333;
     display: flex;
     justify-content: center;
     align-items: center;
