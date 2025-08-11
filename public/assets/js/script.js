@@ -26,15 +26,7 @@
   document.addEventListener("DOMContentLoaded", typeEffect);
 
 
-  window.addEventListener('load', () => {
-      setTimeout(() => {
-        document.body.classList.remove('body-lock');
-      }, 2000);
 
-          const navbar = document.querySelector('.navbar');
-          navbar.classList.remove('hidden-before-load');
-          navbar.classList.add('visible-after-load');
-      });
       function animateProgressBars() {
           const section = document.querySelector("#technologie");
           const bars = section.querySelectorAll(".progress-bar");
