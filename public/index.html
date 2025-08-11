@@ -15,73 +15,6 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/fontawesome/css/all.css">
     <title>Tolojanahary-Portfolio</title>
-    <style>
-        .scroller__inner {
-            padding-block: 1rem;
-            display: flex;
-            flex-wrap: nowrap;
-            gap: 1rem;
-        }
-
-        .scroller__inner>div {
-            flex-shrink: 0;
-            transition: all 0.3s;
-            overflow: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            z-index: 999;
-            border-radius: 20px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-
-        }
-
-        .scroller__inner>div button {
-            transition: all 0.3s;
-            position: absolute;
-            opacity: 0;
-            z-index: 2;
-        }
-
-        .scroller__inner>div:hover button {
-            opacity: 1;
-        }
-
-        .scroller__inner>div:hover {
-            cursor: pointer;
-        }
-
-        .scroller__inner>div img {
-            transition: all 0.3s;
-            z-index: 1;
-        }
-
-        .scroller__inner>div:hover img {
-            filter: blur(1px);
-            transform: scale(1.2);
-        }
-
-        .scroller[data-animated="true"] {
-            overflow: hidden;
-            mask: linear-gradient(90deg, transparent, white 5%, white 95%, transparent);
-        }
-
-        .scroller[data-animated="true"] .scroller__inner {
-            width: max-content;
-            animation: scroll 20s linear infinite;
-        }
-
-        .scroller:hover .scroller__inner {
-            animation-play-state: paused;
-        }
-
-        @keyframes scroll {
-            to {
-                transform: translate(calc(-50% - 0.5rem));
-            }
-        }
-    </style>
 </head>
 
 <body>
@@ -97,7 +30,6 @@
             <div></div>
             <div></div>
             <div></div>
-
             <div></div>
             <div></div>
             <div></div>
@@ -226,6 +158,7 @@
         </div>
     </section>
 
+    <!-- technologie -->
     <section id="technologie">
         <div class="container py-5">
             <div class="row">
@@ -345,6 +278,7 @@
         </div>
     </section>
 
+    <!-- portfolio -->
     <section id="portfolio" class="py-5">
         <div class="container py-5">
             <div class="col-md-8 mx-auto">
@@ -371,7 +305,6 @@
             </div>
 
 
-
             <div class="scroller" data-aos="fade-up" data-aos-delay="700">
                 <div class="scroller__inner">
                     <div><img src="assets/img/portfolio.png" class="img-portfolio border-radius-20" width="400"
@@ -395,10 +328,9 @@
                 </div>
             </div>
         </div>
-
-
     </section>
 
+    <!-- contact -->
     <section id="contact" class="py-5">
         <div class="container py-5 d-flex justify-content-center align-items-center h-100">
             <div class="row contact-container w-100" data-aos="fade-up" data-aos-delay="100">
@@ -469,58 +401,11 @@
         </div>
     </footer>
     <script src="assets/js/script.js"></script>
-    <script src="assets/js/navbar.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
     <!-- AOS -->
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <script>
-
-        AOS.init({
-            duration: 800, // durée de l'animation en ms
-            once: true     // ne s’anime qu’une seule fois
-        });
-        // Script pour changer fa-regular en fa-solid pour le lien actif
-        const navLinks = document.querySelectorAll('.nav-link');
-
-        function updateIcons() {
-            navLinks.forEach(link => {
-                const icon = link.querySelector('i');
-                if (!icon) return;
-
-                if (link.classList.contains('active')) {
-                    icon.classList.remove('fa-regular');
-                    icon.classList.add('fa-solid');
-                } else {
-                    icon.classList.remove('fa-solid');
-                    icon.classList.add('fa-regular');
-                }
-            });
-        }
-
-        // Sur chargement et sur scroll
-        document.addEventListener('scroll', updateIcons);
-        document.addEventListener('DOMContentLoaded', updateIcons);
-
-        const scrollers = document.querySelectorAll(".scroller");
-
-        if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-            scrollers.forEach((scroller) => {
-                scroller.setAttribute("data-animated", true);
-
-                const scrollerInner = scroller.querySelector(".scroller__inner");
-                const scrollerContent = Array.from(scrollerInner.children);
-
-                scrollerContent.forEach((item) => {
-                    const duplicatedItem = item.cloneNode(true);
-                    duplicatedItem.setAttribute("aria-hidden", true);
-                    scrollerInner.appendChild(duplicatedItem);
-                });
-            });
-        } 
-    </script>
-
 </body>
 
 </html>
