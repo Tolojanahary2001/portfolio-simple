@@ -194,6 +194,17 @@
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: "Montserrat";
+    src: url("../fonts/montserrat.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: "MaPolice", sans-serif;
+}
+
 #hero,
 #about,
 #technologie,
@@ -698,6 +709,98 @@ span.cursor {
     to {
         transform: translate(calc(-50% - 0.5rem));
     }
+}
+
+/* popup */
+#popup {
+    background-color: #33333347;
+    position: fixed;
+    align-items: center;
+    z-index: 999;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.bg-popup {
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.popup-content {
+    background-color: #ffffff;
+    border-radius: 50px;
+}
+
+.taskList {
+    list-style: none;
+    padding: 0 !important;
+    /* display: flex;
+    justify-content: space-between; */
+}
+
+.taskList li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width:1200px) {
+    ul.taskList li:first-child {
+        width: 16.66666667%;
+    }
+
+    ul.taskList li:nth-child(2) {
+        margin: 0 4px;
+    }
+
+    ul.taskList li:nth-child(3) {
+        margin: 0 12px;
+    }
+}
+
+@media (max-width:991px) {
+    ul.taskList li {
+        width: 25% !important;
+        margin: 0 !important;
+    }
+}
+
+@media (max-width:576px) {
+    ul.taskList li {
+        width: 50% !important;
+        padding: 10px;
+    }
+
+    .techList {
+        gap: 30px !important;
+    }
+
+    .p-5 {
+        padding: 2rem !important;
+    }
+
+    h2,
+    h5 {
+        text-align: center;
+    }
+
+    .popup-content button {
+        width: 100%;
+    }
+}
+
+.techList {
+    margin-top: 20px;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    padding: 0 !important;
 }
 
 /* contact */
