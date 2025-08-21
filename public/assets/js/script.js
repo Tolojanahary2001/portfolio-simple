@@ -126,7 +126,7 @@ function updateActiveNav() {
 
             scrollerContent.forEach((item) => {
                 const duplicatedItem = item.cloneNode(true);
-                duplicatedItem.setAttribute("aria-hidden", true);
+                duplicatedItem.setAttribute("aria-hidden", false);
                 scrollerInner.appendChild(duplicatedItem);
             });
         });
