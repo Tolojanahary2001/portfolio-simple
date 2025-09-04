@@ -345,6 +345,8 @@
                 </div>
             </div>
         </div>
+
+        <!-- popup -->
         <div id="popup">
             <img src="assets/img/icons/close.svg" class="closePopup" width="30" alt="">
             <div class="container bg-popup">
@@ -476,28 +478,45 @@
         });
 
 
-        const buttons = document.querySelectorAll('.showPopup'); // tous les boutons "En savoir plus"
+        // === 6. Effet scroller infini + clics fiables ===
+        const scrollers = document.querySelectorAll(".scroller");
+
+        if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+            scrollers.forEach((scroller) => {
+                scroller.setAttribute("data-animated", "true");
+
+                const track = scroller.querySelector(".scroller__inner");
+                const items = Array.from(track.children);
+
+                // 1) Dupliquer les éléments (ne pas toucher à aria-hidden ici)
+                items.forEach((item) => {
+                    const clone = item.cloneNode(true); // true = clone le contenu
+                    track.appendChild(clone);
+                });
+
+                // 2) DÉLÉGATION DES CLICS : fonctionne pour originaux + clones
+                track.addEventListener("click", (e) => {
+                    // on accepte le clic sur le bouton ou la carte
+                    const cardOrBtn = e.target.closest(".showPopup, .showPopup .myBtn");
+                    if (!cardOrBtn) return;
+
+                    const popup = document.getElementById("popup");
+                    if (popup) {
+                        popup.classList.add("active");
+                        console.log("clické (delegate)");
+                    }
+                });
+            });
+        }
+
+        // === Popup : fermeture inchangée ===
         const popup = document.getElementById('popup');
         const closePopup = document.querySelector('.closePopup');
 
-        // Afficher le popup au clic sur un bouton
-        buttons.forEach(btn => {
-            btn.addEventListener('click', () => {
-                popup.classList.add('active');
-                console.log("clické");
-            });
-        });
+        closePopup?.addEventListener('click', () => popup.classList.remove('active'));
 
-        // Fermer avec la croix
-        closePopup.addEventListener('click', () => {
-            popup.classList.remove('active');
-        });
-
-        // Fermer si on clique en dehors du contenu
-        popup.addEventListener('click', (e) => {
-            if (e.target === popup) {
-                popup.classList.remove('active');
-            }
+        popup?.addEventListener('click', (e) => {
+            if (e.target === popup) popup.classList.remove('active');
         });
 
     </script>

@@ -115,20 +115,4 @@ function updateActiveNav() {
   window.addEventListener('load', updateActiveNav);
   updateActiveNav(); // <-- CET APPEL fait que "Home" sera actif dès le chargement
   
-
-    // === 6. Effet scroller infini ===
-    const scrollers = document.querySelectorAll(".scroller");
-    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-        scrollers.forEach((scroller) => {
-            scroller.setAttribute("data-animated", true);
-            const scrollerInner = scroller.querySelector(".scroller__inner");
-            const scrollerContent = Array.from(scrollerInner.children);
-
-            scrollerContent.forEach((item) => {
-                const duplicatedItem = item.cloneNode(true);
-                duplicatedItem.setAttribute("aria-hidden", false);
-                scrollerInner.appendChild(duplicatedItem);
-            });
-        });
-    }
 });
