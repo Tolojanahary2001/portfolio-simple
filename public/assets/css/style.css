@@ -701,11 +701,17 @@ span.cursor {
 .scroller[data-animated="true"] .scroller__inner {
     width: max-content;
     animation: scroll 20s linear infinite;
+    animation-play-state: running;
+    /* ✅ état normal */
 }
 
-.scroller:hover .scroller__inner {
+/* Stop scroll quand on hover OU quand popup est actif */
+.scroller:hover .scroller__inner,
+.scroller.paused .scroller__inner {
     animation-play-state: paused;
+    /* ✅ gèle l’animation */
 }
+
 
 @keyframes scroll {
     to {
@@ -970,8 +976,9 @@ textarea:focus+.label {
 }
 
 footer {
+    background-color: #fff;
+    padding-bottom: 80px;
     color: #333;
-    z-index: 2;
     position: relative;
 }
 
@@ -980,7 +987,6 @@ footer p {
 }
 
 .bg-footer {
-    background-color: #ffffff69;
     backdrop-filter: blur(10px);
     padding: 40px 0;
     position: relative;

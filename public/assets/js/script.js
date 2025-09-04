@@ -116,3 +116,110 @@ function updateActiveNav() {
   updateActiveNav(); // <-- CET APPEL fait que "Home" sera actif dès le chargement
   
 });
+
+
+
+// Scroller popup
+const scrollers = document.querySelectorAll(".scroller");
+const popup = document.getElementById("popup");
+const closePopup = document.querySelector(".closePopup");
+
+if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    scrollers.forEach((scroller) => {
+        scroller.setAttribute("data-animated", "true");
+
+        const track = scroller.querySelector(".scroller__inner");
+        const items = Array.from(track.children);
+
+        // Dupliquer les éléments
+        items.forEach((item) => {
+            const clone = item.cloneNode(true);
+            track.appendChild(clone);
+        });
+
+        // Délégation des clics
+        track.addEventListener("click", (e) => {
+            const card = e.target.closest(".showPopup");
+            if (!card) return;
+
+            // === Remplir le popup dynamiquement ===
+            const title = card.dataset.title;
+            const tasks = JSON.parse(card.dataset.tasks || "[]");
+            const tech = JSON.parse(card.dataset.tech || "[]");
+
+            // Titre
+            popup.querySelector(".titleProjet").textContent = title;
+
+            // Tâches
+            const taskList = popup.querySelector(".taskList");
+            taskList.innerHTML = tasks.map(t => `
+                <li class="col-md-3 col-6">
+                    <img src="${t.icon}" width="40" alt="">${t.label}
+                </li>
+            `).join("");
+
+            // Techno
+            const techLists = popup.querySelectorAll(".techList");
+            techLists[0].innerHTML = tech
+              .slice(0, 3)
+              .map(t => `<li><img src="${t.icon}" width="${t.width}" alt=""></li>`)
+              .join("");
+
+            techLists[1].innerHTML = tech
+              .slice(3)
+              .map(t => `<li><img src="${t.icon}" width="${t.width}" alt=""></li>`)
+              .join("");
+
+            // Affiche le popup et stoppe le scroll
+            popup.classList.add("active");
+            scroller.classList.add("paused");
+        });
+    });
+}
+
+// === Fermeture du popup ===
+closePopup?.addEventListener("click", () => {
+    popup.classList.remove("active");
+    scrollers.forEach(s => s.classList.remove("paused"));
+});
+
+popup?.addEventListener("click", (e) => {
+    if (e.target === popup) {
+        popup.classList.remove("active");
+        scrollers.forEach(s => s.classList.remove("paused"));
+    }
+});
+
+
+// formspree 
+const form = document.getElementById("contactForm");
+const formMessage = document.getElementById("formMessage");
+
+form.addEventListener("submit", async (e) => {
+    e.preventDefault(); // Empêche l'envoi classique
+
+    const formData = new FormData(form);
+
+    try {
+        const response = await fetch("https://formspree.io/f/xyzplzln", {
+            method: "POST",
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        });
+
+        if (response.ok) {
+            // Formulaire envoyé avec succès
+            form.style.display = "none";         // Masquer le formulaire
+            formMessage.style.display = "block"; // Afficher ton message
+            form.reset();
+        } else {
+            const data = await response.json();
+            alert("Erreur : " + (data.errors ? data.errors.map(e => e.message).join(", ") : "Merci de réessayer."));
+        }
+    } catch (error) {
+        alert("Erreur lors de l'envoi. Merci de réessayer.");
+        console.error(error);
+    }
+});
