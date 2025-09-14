@@ -1,5 +1,8 @@
 {
-  "projects": {
-    "default": "portfolio-4233c"
-  }
+  "projects": {  
+    "default": "portfolio-4233c",
+    "tolo": "tolojanahary-portfolio"
+  },
+  "targets": {},
+  "etags": {}
 }
