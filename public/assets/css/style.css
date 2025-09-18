@@ -1,5 +1,5 @@
 @font-face {
-    font-family: 'Montserrat';
+    font-family: 'Myfont';
     src: url('../fonts/montserrat-regular.woff2') format('woff2');
     font-weight: 400;
     font-style: normal;
@@ -7,7 +7,7 @@
 }
 
 @font-face {
-    font-family: 'Montserrat-bold';
+    font-family: 'Myfont-bold';
     src: url('../fonts/montserrat-bold.woff2') format('woff2');
     font-weight: 700;
     font-style: normal;
@@ -206,19 +206,8 @@
 * {
     padding: 0;
     margin: 0;
-    font-family: "Montserrat", sans-serif;
+    font-family: "Myfont", sans-serif;
     box-sizing: border-box;
-}
-
-@font-face {
-    font-family: "Montserrat";
-    src: url("../fonts/montserrat.woff2") format("woff2");
-    font-weight: normal;
-    font-style: normal;
-}
-
-body {
-    font-family: "MaPolice", sans-serif;
 }
 
 #hero,
@@ -369,12 +358,12 @@ h1,
 span.cursor,
 span#typedText {
     font-size: 50px !important;
-    font-family: Montserrat-bold !important;
+    font-family: Myfont-bold !important;
 }
 
 h2 {
     font-weight: 700;
-    font-family: montserrat-bold;
+    font-family: Myfont-bold;
 }
 
 span#typedText,
@@ -455,7 +444,7 @@ span.cursor {
 }
 
 #titleSkills {
-    font-family: 'Montserrat', sans-serif;
+    font-family: Myfont;
     font-size: 2rem;
     white-space: nowrap;
     display: inline-block;
@@ -518,7 +507,7 @@ span.cursor {
     span.cursor,
     span#typedText {
         font-size: 40px !important;
-        font-family: montserrat-bold;
+        font-family: Myfont-bold;
     }
 
     .myBtnContainer {
