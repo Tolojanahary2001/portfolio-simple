@@ -358,12 +358,12 @@ h1,
 span.cursor,
 span#typedText {
     font-size: 50px !important;
-    font-family: Myfont-bold !important;
+    font-family: "Myfont-bold" !important;
 }
 
 h2 {
     font-weight: 700;
-    font-family: Myfont-bold;
+    font-family: "Myfont-bold";
 }
 
 span#typedText,
@@ -444,7 +444,7 @@ span.cursor {
 }
 
 #titleSkills {
-    font-family: Myfont;
+    font-family: "Myfont";
     font-size: 2rem;
     white-space: nowrap;
     display: inline-block;
@@ -507,7 +507,7 @@ span.cursor {
     span.cursor,
     span#typedText {
         font-size: 40px !important;
-        font-family: Myfont-bold;
+        font-family: "Myfont-bold";
     }
 
     .myBtnContainer {
